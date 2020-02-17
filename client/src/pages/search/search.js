@@ -1,7 +1,14 @@
 import React from "react"
-import Header from "../../components/header"
+import SearchBar from "../../components/searchBar/searchBar"
+import Results from "../../components/results/results"
+
 function search() {
     return(
-        <Header />
+    <div>
+        <div><SearchBar /></div>
+        <div><Results /></div>
+    </div>
     )
 }
+
+export default search;
