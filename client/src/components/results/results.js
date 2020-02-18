@@ -1,9 +1,9 @@
 import React from "react"
 
-function results() {
+function results(props) {
     return(
         <div>
-            <p>Results</p>
+            <p>{props.name}</p>
             <div className="results">
 
             </div>

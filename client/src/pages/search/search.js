@@ -6,7 +6,7 @@ function search() {
     return(
     <div>
         <div><SearchBar /></div>
-        <div><Results /></div>
+        <div><Results name="Search Results" /></div>
     </div>
     )
 }
