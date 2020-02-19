@@ -1,14 +1,19 @@
-import React from "react"
+import React, { useState } from "react"
 import SearchBar from "../../components/searchBar/searchBar"
 import Results from "../../components/results/results"
 
-function search() {
-    return(
-    <div>
-        <div><SearchBar /></div>
-        <div><Results name="Search Results" /></div>
-    </div>
+
+function Search() {
+    const [resultData, setResultData] = useState();
+    console.log(resultData);
+
+
+    return (
+        <div>
+            <SearchBar results = {setResultData} />
+            <Results name="Search Results" />
+        </div>
     )
 }
 
-export default search;
+export default Search;

@@ -1,30 +1,33 @@
 import React, { useState } from "react"
 import axios from "axios"
 
-function SearchBar() {
-//State is set using hooks and constants are declared for the search
+function SearchBar(props) {
     const [input, setInput]= useState('');
-
-function HandleClick() {
     
+
+    function handleClick() {
+
         axios(
             {
                 method: "GET",
                 url: 'https://www.googleapis.com/books/v1/volumes?q=' + input
-                
+
             }
         ).then(res => {
             
-            console.log(res.data)
+            props.results(res.data.items)
         })
 
+
+    }
     
-}
+    
+    
     return (
         <div>
             <h2>Book Search</h2>
-            <input onChange={event => setInput(event.target.value)} type="text" placeholder="Search for a book" name="search" />
-            <button type="submit" onClick={HandleClick}>Search</button>
+            <input  type="text" onChange={event => setInput(event.target.value)} placeholder="Search for a book" name="search" />
+            <button type="submit" onClick= {handleClick}>Search</button>
         </div>
     )
 }
