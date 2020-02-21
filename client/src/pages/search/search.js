@@ -11,7 +11,7 @@ function Search() {
     return (
         <div>
             <SearchBar results = {setResultData} />
-            <Results name="Search Results" />
+            <Results data = {resultData} name="Search Results" />
         </div>
     )
 }
