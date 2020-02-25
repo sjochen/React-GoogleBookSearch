@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import axios from "axios"
 
 function SearchBar(props) {
-    const [input, setInput]= useState('');
+    const [input, setInput]= useState();
     
 
     function handleClick() {

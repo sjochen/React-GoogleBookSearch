@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import SearchBar from "../../components/searchBar/searchBar"
 import Results from "../../components/results/results"
+import DataMap from "../../components/DataMap/DataMpa";
+import Buttons from "../../components/SaveButtons/SaveButtons";
 
 
 function Search() {
@@ -11,7 +13,10 @@ function Search() {
     return (
         <div>
             <SearchBar results = {setResultData} />
-            <Results data = {resultData} name="Search Results" />
+            <Results  />
+            <DataMap data = {resultData} name="Search Results" />
+            <Buttons />
+            
         </div>
     )
 }
