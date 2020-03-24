@@ -1,6 +1,8 @@
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const db = require("./models");
+
 
 const app = express();
 const Port = 8080;
