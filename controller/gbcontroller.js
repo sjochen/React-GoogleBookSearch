@@ -1,29 +1,29 @@
 const db = require("../models");
 
 module.exports = {
-    findAll: (req,res) => {
+    findAll: (req, res) => {
         db.books.find({})
             .then(book => res.json(book))
     },
 
 
-saveBook: (req, res) => {
-    db.books.create({
-        id: req.body.id,
+    saveBook: (req, res) => {
+        db.books.create({
+            id: req.body.id,
 
-        title: req.body.volumeInfo.title,
+            title: req.body.volumeInfo.title,
 
-        authors: req.body.volumeInfo.authors,
+            authors: req.body.volumeInfo.authors,
 
-        description: req.body.volumeInfo.description,
+            description: req.body.volumeInfo.description,
 
-        link: req.body.volumeInfo.link
-    }).then(res.json("Complete"))
-},
+            link: req.body.volumeInfo.link
+        }).then(res.json("Complete"))
+    },
 
-delete: (req, res) => {
-    db.books.deleteOne({id: req.params.id})
-        .then(res.json("Deleted"))
-}
+    delete: (req, res) => {
+        db.books.deleteOne({ id: req.params.id })
+            .then(res.json("Deleted"))
+    }
 
 }
